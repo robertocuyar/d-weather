@@ -118,14 +118,14 @@
 
         function updateCoord(lng, lat) {
             toggleLoad();
-            $.get("http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lng + "&appid=" + OPENW_TOKEN).done(function (data) {
+            $.get("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lng + "&appid=" + OPENW_TOKEN).done(function (data) {
                 toggleLoad();
                 mapActivate();
                 currentCard(data);
                 mapFly(lng, lat);
                 addMarker(lng, lat);
 
-                $.get("http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lng + "&appid=" + OPENW_TOKEN).done(function (info) {
+                $.get("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lng + "&appid=" + OPENW_TOKEN).done(function (info) {
                     fiveCard(info);
                     console.log(info);
 
@@ -151,26 +151,26 @@
             toggleLoad();
             let input = $('.input_text').val()
             if (input.length === 5 && Number.isInteger(parseInt(input)) && input.includes('.') !== true) {
-                $.get("http://api.openweathermap.org/data/2.5/weather?zip=" + input + "&appid=" + OPENW_TOKEN).done(function (data) {
+                $.get("https://api.openweathermap.org/data/2.5/weather?zip=" + input + "&appid=" + OPENW_TOKEN).done(function (data) {
                     $('#header_current, #fiveDay').children().remove();
                     toggleLoad();
                     mapActivate();
                     currentCard(data);
                     mapFly(data.coord.lon, data.coord.lat)
                     addMarker(data.coord.lon, data.coord.lat)
-                    $.get("http://api.openweathermap.org/data/2.5/forecast?zip=" + input + "&appid=" + OPENW_TOKEN).done(function (info) {
+                    $.get("https://api.openweathermap.org/data/2.5/forecast?zip=" + input + "&appid=" + OPENW_TOKEN).done(function (info) {
                         fiveCard(info);
                     })
                 })
             } else {
-                $.get("http://api.openweathermap.org/data/2.5/weather?q=" + input + "&appid=" + OPENW_TOKEN).done(function (data) {
+                $.get("https://api.openweathermap.org/data/2.5/weather?q=" + input + "&appid=" + OPENW_TOKEN).done(function (data) {
                     $('#header_current, #fiveDay').children().remove();
                     toggleLoad();
                     mapActivate();
                     currentCard(data);
                     mapFly(data.coord.lon, data.coord.lat)
                     addMarker(data.coord.lon, data.coord.lat)
-                    $.get("http://api.openweathermap.org/data/2.5/forecast?q=" + input + "&appid=" + OPENW_TOKEN).done(function (info) {
+                    $.get("https://api.openweathermap.org/data/2.5/forecast?q=" + input + "&appid=" + OPENW_TOKEN).done(function (info) {
                         fiveCard(info);
                     })
                 }).fail(function () {
