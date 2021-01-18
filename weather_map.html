@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/weather.map.css">
+    <title>🌧️D-Weather</title>
+</head>
+<body>
+<nav class="navbar navbar-light nav_container">
+    <a class="navbar-brand nav_text">🌧 D-Weather</a>
+    <form class="form-inline">
+        <input id="search_bar" class="form-control mr-sm-2 input_text" type="text" placeholder="Type city name or zipcode" aria-label="Search">
+        <button id="search_btn" class="btn srch_btn my-2 my-sm-0 nav_text input_button" type="button">Search</button>
+    </form>
+</nav>
+<section id="splash" class="container rounded-circle mt-5">
+    <h1 class = "text-center logo">D-Weather</h1>
+    <div id="cloud_logo" class="text-center logo"><i class="fas fa-cloud-rain"></i></div>
+    <h2 class="text-center logo">Search for your local weather!</h2>
+</section>
+<header class="d-none">
+<div class="d-flex justify-content-center">
+    <div class="lds-hourglass my-5 container" id="loader"></div>
+</div>
+</header>
+<main class="my-5">
+    <div class="row w-100">
+    <section id="header_current" class="col-lg-6 p-0 d-none col-md-12 col-sm-12 mb-3"></section>
+    <div id="other_message" class="col-lg-6 p-0 text-center col-md-12 col-sm-12"><h2 id="pitch">Find D-Weather For A Location Today!</h2></div>
+        <section id="map" class="p-0 col-lg-6 col-md-12 col-sm-12 mb-3"></section>
+    </div>
+</main>
+<article>
+    <h2 class="non_default d-none text-center my-5" id="five_title">Here is your 5 day forecast:</h2>
+    <div class="d-flex flex-wrap justify-content-center" id="fiveDay"></div>
+</article>
+<footer id="footer" class="d-flex justify-content-center align-items-center">
+    <div class="mr-3">
+        <h5 class="mb-0">D-Weather Forecast. © 2020 All Rights Reserved</h5>
+    </div>
+    <a class = "mx-3" href="">Terms of Service</a>
+    <a class = "mx-3" href="">Privacy Policy</a>
+    <a class = "mx-3" href="">Cookies</a>
+</footer>
+
+<script src="js/keys.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="js/weather_map.js"></script>
+<script src="https://kit.fontawesome.com/2a6f78e7e8.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+</html>
