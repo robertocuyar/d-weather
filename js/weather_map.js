@@ -146,6 +146,15 @@
             updateCoord(position.coords.longitude, position.coords.latitude)
         }
 
+        function failResponse (){
+            $('#header_current, #fiveDay').children().remove();
+            toggleLoad();
+            $('#splash').css('background-color', 'var(--accent-color)').toggleClass('d-none')
+            $("#splash h1").html("Error Location Not Found")
+            $('#cloud_logo').html('<i class="fas fa-sad-tear"></i>')
+            $('#splash h2').html('Please enter valid city name or zipcode.')
+        }
+
         $('.input_button').click(function () {
             $('#splash').addClass('d-none')
             toggleLoad();
@@ -161,6 +170,8 @@
                     $.get("https://api.openweathermap.org/data/2.5/forecast?zip=" + input + "&appid=" + OPENW_TOKEN).done(function (info) {
                         fiveCard(info);
                     })
+                    }).fail(function () {
+                   failResponse();
                 })
             } else {
                 $.get("https://api.openweathermap.org/data/2.5/weather?q=" + input + "&appid=" + OPENW_TOKEN).done(function (data) {
@@ -174,12 +185,7 @@
                         fiveCard(info);
                     })
                 }).fail(function () {
-                    $('#header_current, #fiveDay').children().remove();
-                    toggleLoad();
-                    $('#splash').css('background-color', 'var(--accent-color)').toggleClass('d-none')
-                    $("#splash h1").html("Error Location Not Found")
-                    $('#cloud_logo').html('<i class="fas fa-sad-tear"></i>')
-                    $('#splash h2').html('Please enter valid city name or zipcode.')
+                   failResponse();
                 })
             }
         })
