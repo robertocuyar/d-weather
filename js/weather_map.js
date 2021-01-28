@@ -189,6 +189,15 @@
                 })
             }
         })
+
+        $('.deny-submit:not([type="submit"])').keydown(e => {
+            if (e.keyCode == 13) {
+                e.preventDefault();
+                $('.input_button').click();
+                return false;
+            }
+        });
+
         getLocation();
 
     })
