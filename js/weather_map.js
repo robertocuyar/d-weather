@@ -127,8 +127,6 @@
 
                 $.get("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lng + "&appid=" + OPENW_TOKEN).done(function (info) {
                     fiveCard(info);
-                    console.log(info);
-
                 })
             })
         }
