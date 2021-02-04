@@ -26,7 +26,7 @@ h1, h2, h4, h5, .card_top, #pitch {
 #splash{
     background-color: var(--white-contrast);
     width: 40rem !important;
-    margin-bottom: 50vh !important;
+    margin-bottom: 25vh !important;
     padding: 8rem 6rem;
     box-shadow: 5px 10px 5px var(--light-main-color);
 }
