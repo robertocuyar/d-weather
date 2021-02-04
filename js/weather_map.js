@@ -139,7 +139,7 @@
         }
 
         function showPosition(position) {
-            $('#splash').toggleClass('d-none')
+            $('#splash').toggleClass('d-none');
             updateCoord(position.coords.longitude, position.coords.latitude)
         }
 
