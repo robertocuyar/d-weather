@@ -101,9 +101,8 @@
         }
 
         function currentCard(data) {
-            console.log(data);
             $('#header_current').append("<h2 id='head_info' class='text-center mb-5'>D-weather for " + data.name + ", " + data.sys.country + " is: </h2>")
-                .append("<div class='card container weather_card text-center p-0 current_card'><div class='card-header card_top'><h4>" + days[currentDate.getDay()] + "</h4></div><h5 class='card-title my-3 weather_month'>" + month[currentDate.getMonth()] + " " + currentDate.getDate() + "</h5><img class='container' src='http://openweathermap.org/img/w/" + data.weather[0].icon + ".png' class='card-img-top' alt='...'> <div class='card-body py-0'>  <p class='card-text'>" + cardBody(data.main.temp, data.weather[0].description, data.main.humidity) + "</p> <p class='card-text'><small class='text-muted'>Last updated at " + convertTime() + "</small></p> </div> </div>"
+                .append("<div class='card container weather_card text-center p-0 current_card'><div class='card-header card_top'><h4>" + days[currentDate.getDay()] + "</h4></div><h5 class='card-title my-3 weather_month'>" + month[currentDate.getMonth()] + " " + currentDate.getDate() + "</h5><img class='container' src='https://openweathermap.org/img/w/" + data.weather[0].icon + ".png' class='card-img-top' alt='...'> <div class='card-body py-0'>  <p class='card-text'>" + cardBody(data.main.temp, data.weather[0].description, data.main.humidity) + "</p> <p class='card-text'><small class='text-muted'>Last updated at " + convertTime() + "</small></p> </div> </div>"
                 )
         }
 
@@ -111,7 +110,7 @@
             $('#five_title').removeClass('d-none');
             let dayUpdate = 1;
             for (let i = 0; i <= 32; i += 8) {
-                $('#fiveDay').append("<div class='card container weather_card mx-3 text-center p-0 small_card mb-3'><div class ='card-header card_top'><h4>" + days[(currentDate.getDay() + dayUpdate)] + "</h4></div><h5 class='card-title my-3 weather_month'>" + monthRender(info.list[i].dt_txt) + " " + dayRender(info.list[i].dt_txt) + "</h5><img class='container' src='http://openweathermap.org/img/w/" + info.list[i].weather[0].icon + ".png' class='card-img-top' alt='...'> <div class='card-body py-0'>  <p class='card-text'>" + cardBody(info.list[i].main.temp, info.list[i].weather[0].description, info.list[i].main.humidity) + "</p></div></div>")
+                $('#fiveDay').append("<div class='card container weather_card mx-3 text-center p-0 small_card mb-3'><div class ='card-header card_top'><h4>" + days[(currentDate.getDay() + dayUpdate)] + "</h4></div><h5 class='card-title my-3 weather_month'>" + monthRender(info.list[i].dt_txt) + " " + dayRender(info.list[i].dt_txt) + "</h5><img class='container' src='https://openweathermap.org/img/w/" + info.list[i].weather[0].icon + ".png' class='card-img-top' alt='...'> <div class='card-body py-0'>  <p class='card-text'>" + cardBody(info.list[i].main.temp, info.list[i].weather[0].description, info.list[i].main.humidity) + "</p></div></div>")
                 dayUpdate += +1;
             }
         }
