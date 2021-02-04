@@ -97,11 +97,11 @@
         }
 
         function cardBody(tempData, weather, hum) {
-            return "<ul class='list-group list-group-flush weather_content'> <li class='list-group-item py-2'>" + tempConversion(tempData) + "</li> <li class='list-group-item py-2'>" + weather.toUpperCase() + "</li> <li class='list-group-item py-2'>Humidity : " + hum + "%</li> </ul>\n"
+            return "<ul class='list-group list-group-flush weather_content'><li class='list-group-item py-2'>" + tempConversion(tempData) + "</li><li class='list-group-item py-2'>" + weather.toUpperCase() + "</li><li class='list-group-item py-2'>Humidity : " + hum + "%</li></ul>\n"
         }
 
-
         function currentCard(data) {
+            console.log(data);
             $('#header_current').append("<h2 id='head_info' class='text-center mb-5'>D-weather for " + data.name + ", " + data.sys.country + " is: </h2>")
                 .append("<div class='card container weather_card text-center p-0 current_card'><div class='card-header card_top'><h4>" + days[currentDate.getDay()] + "</h4></div><h5 class='card-title my-3 weather_month'>" + month[currentDate.getMonth()] + " " + currentDate.getDate() + "</h5><img class='container' src='http://openweathermap.org/img/w/" + data.weather[0].icon + ".png' class='card-img-top' alt='...'> <div class='card-body py-0'>  <p class='card-text'>" + cardBody(data.main.temp, data.weather[0].description, data.main.humidity) + "</p> <p class='card-text'><small class='text-muted'>Last updated at " + convertTime() + "</small></p> </div> </div>"
                 )
