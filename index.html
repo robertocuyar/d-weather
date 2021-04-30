@@ -5,10 +5,12 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
-    <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@600&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="css/weather.map.css">
     <title>🌧️ D-Weather</title>
 </head>
@@ -16,25 +18,27 @@
 <nav class="navbar navbar-light nav_container">
     <a class="navbar-brand nav_text">🌧 D-Weather</a>
     <form class="form-inline">
-        <input id="search_bar" class="form-control mr-sm-2 input_text deny-submit" type="text" placeholder="Type city name or zipcode" aria-label="Search">
+        <input id="search_bar" class="form-control mr-sm-2 input_text deny-submit" type="text"
+               placeholder="Type city name or zipcode" aria-label="Search">
         <button id="search_btn" class="btn srch_btn my-2 my-sm-0 nav_text input_button" type="button">Search</button>
     </form>
 </nav>
 <section id="splash" class="container rounded-circle mt-5">
-    <h1 class = "text-center logo">D-Weather</h1>
+    <h1 class="text-center logo">D-Weather</h1>
     <div id="cloud_logo" class="text-center logo"><i class="fas fa-cloud-rain"></i></div>
     <h2 class="text-center logo">Search for your local weather!</h2>
 </section>
 <header class="d-none">
-<div class="d-flex justify-content-center">
-    <div class="lds-hourglass my-5 container" id="loader"></div>
-</div>
+    <div class="d-flex justify-content-center">
+        <div class="lds-hourglass my-5 container" id="loader"></div>
+    </div>
 </header>
 <main class="my-5 d-flex justify-content-center">
     <div class="row w-100">
-    <section id="header_current" class="col-lg-6 p-0 d-none col-md-12 col-sm-12 mb-3"></section>
-    <div id="other_message" class="col-lg-6 p-0 text-center col-md-12 col-sm-12"><h2 id="pitch">Find D-Weather For A Location Today!</h2></div>
-        <section  class="p-0 col-lg-6 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
+        <section id="header_current" class="col-lg-6 p-0 d-none col-md-12 col-sm-12 mb-3"></section>
+        <div id="other_message" class="col-lg-6 p-0 text-center col-md-12 col-sm-12"><h2 id="pitch">Find D-Weather For A
+            Location Today!</h2></div>
+        <section class="p-0 col-lg-6 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
             <div id="map"></div>
         </section>
     </div>
@@ -50,9 +54,14 @@
 </footer>
 
 <script src="js/weather.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src="js/weather_map.js"></script>
 <script src="https://kit.fontawesome.com/2a6f78e7e8.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
